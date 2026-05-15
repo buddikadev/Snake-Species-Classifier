@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Classifier AI</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="main-container">
+        <div class="title-box">SNAKE CLASSIFIER</div>
+
+        <div class="upload-card">
+            <h2 class="upload-title">Upload Image</h2>
+            <p class="upload-sub">Please upload a clear image of the snake to identify its species.</p>
+            
+            <input type="file" id="imageInput" accept="image/png, image/jpeg, image/jpg, image/webp">
+            <button id="predictBtn">Identify Snake</button>
+
+            <div class="footer-text">
+                STA 3402 Neural Networks Mini Project
+            </div>
+        </div>
+
+        <div id="resultCard" class="result-card hidden">
+            <div class="img-preview">
+                <img id="previewImg" src="" alt="Uploaded Snake">
+            </div>
+            <div class="divider"></div>
+            <div class="pred-label">PREDICTED SPECIES</div>
+            <div id="predSpecies" class="pred-species">Loading...</div>
+            <div id="confLevel" class="conf-level"></div>
+        </div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>

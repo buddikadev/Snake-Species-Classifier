@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Montserrat:wght@400;600;800&display=swap');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    top: -10px; left: -10px; right: -10px; bottom: -10px; 
+    background-image: url('bg.webp'); 
+    background-size: cover;
+    background-position: center;
+    filter: blur(12px) brightness(0.35); 
+    z-index: -1;
+}
+
+.main-container {
+    max-width: 650px;
+    margin: 0 auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+/* Animated Word Art Title */
+.title-box {
+    font-family: 'Anton', sans-serif;
+    font-size: 70px;
+    text-align: center;
+    margin-bottom: 40px;
+    letter-spacing: 5px;
+    background: linear-gradient(90deg, #1abc9c, #f1c40f, #2ecc71, #1abc9c);
+    background-size: 300% 100%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 8px 12px rgba(0, 0, 0, 0.9));
+    animation: gradientFlow 5s ease-in-out infinite, floatingText 4s ease-in-out infinite;
+}
+
+@keyframes gradientFlow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes floatingText {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Glassmorphism Cards */
+.upload-card, .result-card {
+    background: rgba(255, 255, 255, 0.05); 
+    backdrop-filter: blur(15px); 
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+    padding: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.6), inset 0 0 20px rgba(255,255,255,0.02);
+}
+
+.upload-title {
+    color: #1abc9c; 
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 0;
+    margin-bottom: 12px;
+    text-shadow: 2px 4px 10px rgba(0,0,0,0.6);
+}
+
+.upload-sub {
+    color: #bdc3c7; 
+    font-size: 15px;
+    font-weight: 400;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+input[type="file"] {
+    display: block;
+    margin: 0 auto 25px auto;
+    color: #ffffff;
+    font-weight: 600;
+    background: rgba(255,255,255,0.1);
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px dashed rgba(255,255,255,0.3);
+    cursor: pointer;
+    width: 80%;
+    max-width: 350px;
+}
+
+input[type="file"]::file-selector-button {
+    background: #1abc9c;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 15px;
+    transition: background 0.3s;
+}
+
+input[type="file"]::file-selector-button:hover {
+    background: #16a085;
+}
+
+button#predictBtn {
+    background: linear-gradient(135deg, #1abc9c, #16a085);
+    color: white;
+    border: none;
+    padding: 15px 40px;
+    font-size: 18px;
+    cursor: pointer;
+    border-radius: 12px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    transition: all 0.3s ease;
+    box-shadow: 0px 8px 20px rgba(26, 188, 156, 0.4);
+}
+
+button#predictBtn:hover {
+    transform: translateY(-3px) scale(1.03); 
+    box-shadow: 0px 12px 25px rgba(26, 188, 156, 0.6);
+}
+
+.footer-text {
+    color: #7f8c8d;
+    font-size: 12px;
+    margin-top: 35px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.hidden {
+    display: none;
+}
+
+.img-preview img {
+    max-width: 80%;
+    border-radius: 15px;
+    box-shadow: 0px 15px 35px rgba(0,0,0,0.8); 
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.divider {
+    border-top: 2px solid rgba(26, 188, 156, 0.3); 
+    margin: 35px 0;
+}
+
+.pred-label {
+    color: #1abc9c;
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.5);
+}
+
+.pred-species {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 38px;
+    font-weight: 800;
+    margin: 15px 0 25px 0;
+    background: linear-gradient(90deg, #ffffff, #d1d8e0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    filter: drop-shadow(0px 4px 10px rgba(0,0,0,0.8));
+}
+
+.conf-level {
+    display: inline-block;
+    background: rgba(46, 204, 113, 0.15);
+    color: #2ecc71; 
+    font-size: 18px;
+    font-weight: 800;
+    padding: 10px 25px;
+    border-radius: 30px;
+    border: 1px solid rgba(46, 204, 113, 0.3);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    letter-spacing: 1px;
+}
