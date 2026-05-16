@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+gunicorn
+numpy
+Pillow
+tensorflow
+tf_keras
+jinja2
